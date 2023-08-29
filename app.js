@@ -13,7 +13,7 @@ const bookRouter = require('./routes/book');
 const app = express();
 
 // kế nối mongoose
-mongoose.connect('mongodb://127.0.0.1:27017/mybook',{
+mongoose.connect('mongodb+srv://anhkhoadev:Kenbi123@cluster0.cnauzt0.mongodb.net/myapp-demo?retryWrites=true&w=majority',{
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
