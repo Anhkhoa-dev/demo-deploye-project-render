@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  h1 Danh sách books
+  a.btn.btn-primary(href='/customer/create') Create
+
+
+  table.table.table-striped 
+    thead 
+        tr  
+            th(scope='col') ID
+            th(scope='col') Title 
+            th(scope='col') Price
+            th(scope='col') Image
+            th(scope='col') Action
+    tbody 
+        if books != ''
+            each item in books
+                tr 
+                    td(scope='row')= item._id
+                    td= item.title
+                    td= item.price
+                    td 
+                        img(src=`/images/${item.image}`, alt=item.title, width="100px") 
+                    td 
+                        a.btn.btn-warning(href=`/book/edit/${item.id}`) Edit
+                        a.btn.btn-warning(href=`/book/delete/${item.id}`) Delete
+        else
+            tr 
+                td(colspan=5) No data
+
+    
